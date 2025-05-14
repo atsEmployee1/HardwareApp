@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Ports;
 
 public class AxSysJobRunner
 {
@@ -14,7 +15,9 @@ public class AxSysJobRunner
         Directory.CreateDirectory(adDirectory);
     }
 
-    public string GenerateJobScript(string filename, string[] lines)
+
+
+public string GenerateJobScript(string filename, string[] lines)
     {
         string fullPath = Path.Combine(adDirectory, filename);
         File.WriteAllLines(fullPath, lines);
